@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | Atharv Bowlekar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">&lt;atharv/&gt;</a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link btn-highlight">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content hidden">
+                <p class="greeting">Hello, I'm</p>
+                <h1 class="name">Atharv Bowlekar</h1>
+                <h2 class="roles">I am a <span class="typing-text"></span><span class="cursor">|</span></h2>
+                <p class="tagline">Building secure, scalable digital experiences with a strong mindset.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary-btn">View Projects</a>
+                    <a href="https://drive.google.com/file/d/1YVQzJDOFVzP63EwffPLHO8SBoXqEyxK-/view?usp=drive_link" class="btn secondary-btn">Download Resume <i class="fas fa-download"></i></a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/git-atharvb"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abowlekar"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/atharv.bowlekar?igsh=MTZubzdkOHhxaXV3MQ=="><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="hero-image hidden">
+                <div class="img-card glass">
+                    <img src="assets/profile.png" alt="Profile" onerror="this.src='https://via.placeholder.com/400x400?text=Profile+Photo'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content hidden">
+                <p>Dedicated and detail-oriented aspiring <strong>Engineer</strong> with hands-on exposure to <strong> software development, modern programming languages, artificial intelligence & machine learning </strong> and more. Experienced in contributing to real world technical projects through internships, competitions, and collaborative team work. Driven by continuous learning and eager to add meaningful value in a dynamic, growth-oriented progressive role. Currently, I am exploring the intersection of modern UI/UX and network security, aiming to build the next generation of resilient web applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="grid-layout">
+                <div class="card glass hidden">
+                    <h3>Bachelor's in Engineering in Computer Science Engineering (AIML)</h3>
+                    <p class="institution">Viva Institute Of Technology, Mumbai University</p>
+                    <p class="duration">2024 - 2027</p>
+                    <p class="desc">Specializing in Artificial Intelligence & Machine Learning. CGPA: 8.83</p>
+                </div>
+                <div class="card glass hidden">
+                    <h3>Diploma in Information Technology</h3>
+                    <p class="institution">Thakur Polytechnic, Maharashtra State Board of Technical Education</p>
+                    <p class="duration">2021 - 2024</p>
+                    <p class="desc">Excellence in Core Fundamentals of IT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item hidden">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass">
+                        <h3>Full-Stack Developer Intern</h3>
+                        <span class="company">PrepXL Inc.</span>
+                        <span class="date">December 2025 - Present</span>
+                        <p>Working on real-world projects : Circular-Equalizer & Audio Transciptors</p>
+                    </div>
+                </div>
+                <div class="timeline-item hidden">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass">
+                        <h3>Student Intern</h3>
+                        <span class="company">Static Int Educare</span>
+                        <span class="date">June 2024 - July 2024</span>
+                        <p>Industrial Training & assessments and experienced first-hand working on mega-projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category glass hidden">
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <div class="skill-bar-container">
+                        <div class="skill-info"><span>HTML5/CSS3</span><span>95%</span></div>
+                        <div class="progress-bar"><div class="progress" data-width="95%"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-info"><span>JavaScript (ES6+)</span><span>90%</span></div>
+                        <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-info"><span>React.js</span><span>85%</span></div>
+                        <div class="progress-bar"><div class="progress" data-width="85%"></div></div>
+                    </div><div class="skill-bar-container">
+                        <div class="skill-info"><span>PyQt6</span><span>97%</span></div>
+                        <div class="progress-bar"><div class="progress" data-width="97%"></div></div>
+                    </div>
+                </div>
+                
+                <div class="skill-category glass hidden">
+                    <h3><i class="fas fa-shield-alt"></i> Backend & Cloud</h3>
+                    <div class="skill-bar-container">
+                        <div class="skill-info"><span>Python</span><span>90%</span></div>
+                        <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-info"><span>Java</span><span>92%</span></div>
+                        <div class="progress-bar"><div class="progress" data-width="92%"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-info"><span>Amazon Web Services</span><span>85%</span></div>
+                        <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-info"><span>Firebase</span><span>70%</span></div>
+                        <div class="progress-bar"><div class="progress" data-width="70%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card glass hidden">
+                    <div class="project-header">
+                        <i class="fas fa-shield-virus project-icon"></i>
+                        <h3>NexaShield</h3>
+                    </div>
+                    <p>An advanced cybersecurity defense system capable of detecting SQL injection attacks in real-time logs.</p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                        <span>Flask</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card glass hidden">
+                    <div class="project-header">
+                        <i class="fas fa-paint-brush project-icon"></i>
+                        <h3>DrawJS</h3>
+                    </div>
+                    <p>A web-based drawing application built with HTML5 Canvas API, featuring custom brushes and save functionality.</p>
+                    <div class="tags">
+                        <span>HTML5 Canvas</span>
+                        <span>JavaScript</span>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card glass hidden">
+                    <div class="project-header">
+                        <i class="fas fa-shopping-cart project-icon"></i>
+                        <h3>E-Commerce Dashboard</h3>
+                        <p class="project-note">(Coming Soon)</p>
+                    </div>
+                    <p>A comprehensive admin panel for managing products, orders, and analytics visualization.</p>
+                    <div class="tags">
+                        <span>React</span>
+                        <span>Chart.js</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper glass hidden">
+                <form id="contactForm">
+                    <div class="input-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn primary-btn submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    <p id="formMessage"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <p id="copywrtite">&copy; 2026 Atharv Bowlekar. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/git-atharvb"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/abowlekar"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/atharv.bowlekar?igsh=MTZubzdkOHhxaXV3MQ=="><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
