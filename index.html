@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    
+    <div class="scroll-progress"></div>
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#hero" class="logo">&lt;atharv/&gt;</a>
@@ -22,6 +23,9 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link btn-highlight">Contact</a></li>
             </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -39,12 +43,12 @@
                 <p class="tagline">Building secure, scalable digital experiences with a strong mindset.</p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn primary-btn">View Projects</a>
-                    <a href="https://drive.google.com/file/d/1YVQzJDOFVzP63EwffPLHO8SBoXqEyxK-/view?usp=drive_link" class="btn secondary-btn">Download Resume <i class="fas fa-download"></i></a>
+                    <a href="https://drive.google.com/file/d/1YVQzJDOFVzP63EwffPLHO8SBoXqEyxK-/view?usp=drive_link" class="btn secondary-btn" target="_blank">Download Resume <i class="fas fa-download"></i></a>
                 </div>
                 <div class="social-links">
-                    <a href="https://github.com/git-atharvb"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/abowlekar"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/atharv.bowlekar?igsh=MTZubzdkOHhxaXV3MQ=="><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/git-atharvb" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abowlekar" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/atharv.bowlekar?igsh=MTZubzdkOHhxaXV3MQ==" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="hero-image hidden">
@@ -72,7 +76,7 @@
                     <h3>Bachelor's in Engineering in Computer Science Engineering (AIML)</h3>
                     <p class="institution">Viva Institute Of Technology, Mumbai University</p>
                     <p class="duration">2024 - 2027</p>
-                    <p class="desc">Specializing in Artificial Intelligence & Machine Learning. CGPA: 8.83</p>
+                    <p class="desc">Specializing in Artificial Intelligence & Machine Learning. <br>CGPA: 8.83</p>
                 </div>
                 <div class="card glass hidden">
                     <h3>Diploma in Information Technology</h3>
@@ -145,12 +149,65 @@
                     </div>
                     <div class="skill-bar-container">
                         <div class="skill-info"><span>Amazon Web Services</span><span>85%</span></div>
-                        <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
+                        <div class="progress-bar"><div class="progress" data-width="85%"></div></div>
                     </div>
                     <div class="skill-bar-container">
                         <div class="skill-info"><span>Firebase</span><span>70%</span></div>
                         <div class="progress-bar"><div class="progress" data-width="70%"></div></div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="grid-layout">
+                <div class="card glass hidden">
+                    <h3>DSA Problem Solving for Interviews using Java</h3>
+                    <p class="institution">Scaler</p>
+                    <a href="https://drive.google.com/file/d/1S8N73IlglAxgI8mjIloyxgj3lUfpJjyv/view?usp=drive_link" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card glass hidden">
+                    <h3>Deep Dive into Deep Learning </h3>
+                    <p class="institution">Scaler</p>
+                    <a href="https://drive.google.com/file/d/1Ce7VZZJmOfdbPmRX3x0mUYPnSnAsr9LS/view?usp=drive_link" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card glass hidden">
+                    <h3>Foundations of Prompt Engineering</h3>
+                    <p class="institution">Amazon Web Services</p>
+                    <a href="https://drive.google.com/file/d/12GeroEVRkfxtDvd3vEhaWqLn_mYYwEEW/view?usp=drive_link" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card glass hidden">
+                    <h3>GitHub Fundamentals : Administration Basics & Product Features </h3>
+                    <p class="institution">Microsoft Learn</p>
+                    <a href="https://drive.google.com/file/d/1NDHm5tOzJEcE8CJTEe22J8l-eOTjgBum/view?usp=drive_link  " target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card glass hidden">
+                    <h3>ReactJS - Web Development</h3>
+                    <p class="institution">Infosys Springboard</p>
+                    <a href="https://drive.google.com/file/d/1oKAUFuMNB9r3BRay43BokxtjtqPftFsi/view?usp=drive_link" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card glass hidden">
+                    <h3>Generative AI apps in Azure</h3>
+                    <p class="institution">Microsoft</p>
+                    <a href="https://drive.google.com/file/d/18GmkCzZKCFXdGYRWQafGoranN_nAqCWm/view?usp=drive_link" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card glass hidden">
+                    <h3>Data Visualization : Empowering Business with Effective Insights</h3>
+                    <p class="institution">Tata - Forage</p>
+                    <a href="https://drive.google.com/file/d/1PSuqH_Aip9lz5BT0VY3Y--KXgu6NcgGc/view?usp=drive_link" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card glass hidden">
+                    <h3>Software Engineering Job Simulation</h3>
+                    <p class="institution">JP Morgan Chase Co. - Forage</p>
+                    <a href="https://drive.google.com/file/d/1YVgx7JqNj-8WiLAugO4mEhmmijxZUwIS/view?usp=drive_link" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card glass hidden">
+                    <h3>Full Stack Java Development</h3>
+                    <p class="institution">Simpli-learn</p>
+                    <a href="https://drive.google.com/file/d/1IphtY07iBF4ocNMVbSctvLqXikgcYa3Z/view?usp=drive_link" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
@@ -180,14 +237,14 @@
 
                 <div class="project-card glass hidden">
                     <div class="project-header">
-                        <i class="fas fa-paint-brush project-icon"></i>
-                        <h3>DrawJS</h3>
+                        <i class="fas fa-dumbbell project-icon"></i>
+                        <h3>Fitness Tracking App</h3>
                     </div>
-                    <p>A web-based drawing application built with HTML5 Canvas API, featuring custom brushes and save functionality.</p>
+                    <p>A comprehensive fitness application to track workouts, monitor progress, and set health goals with real-time analytics.</p>
                     <div class="tags">
-                        <span>HTML5 Canvas</span>
-                        <span>JavaScript</span>
-                        <span>CSS3</span>
+                        <span>React Native</span>
+                        <span>Firebase</span>
+                        <span>Redux</span>
                     </div>
                     <div class="project-links">
                         <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
@@ -216,17 +273,17 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-wrapper glass hidden">
-                <form id="contactForm">
+                <form id="contactForm" action="https://formspree.io/f/xnjnddqk" method="post" target="_blank">
                     <div class="input-group">
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" name="name" required>
                         <label for="name">Your Name</label>
                     </div>
                     <div class="input-group">
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" name="email" required>
                         <label for="email">Your Email</label>
                     </div>
                     <div class="input-group">
-                        <textarea id="message" rows="5" required></textarea>
+                        <textarea id="message" name="message" rows="5" required></textarea>
                         <label for="message">Your Message</label>
                     </div>
                     <button type="submit" class="btn primary-btn submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
@@ -238,11 +295,11 @@
 
     <footer>
         <div class="footer">
-            <p id="copywrtite">&copy; 2026 Atharv Bowlekar. All rights reserved.</p>
+            <p id="copyright">&copy; <span id="year"></span> Atharv Bowlekar. All rights reserved.</p>
             <div class="footer-socials">
-                <a href="https://github.com/git-atharvb"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/abowlekar"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/atharv.bowlekar?igsh=MTZubzdkOHhxaXV3MQ=="><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/git-atharvb" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/abowlekar" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/atharv.bowlekar?igsh=MTZubzdkOHhxaXV3MQ==" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>

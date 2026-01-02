@@ -1,29 +1,32 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Navigation & Hamburger Menu
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
-    const navLinksItems = document.querySelectorAll(".nav-link");
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Dynamic Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        hamburger.classList.toggle("toggle");
+    // 2. Hamburger Menu
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-link');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
     });
 
-    // Close mobile menu when a link is clicked
-    navLinksItems.forEach(link => {
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("active");
-            hamburger.classList.remove("toggle");
+    // Close menu when clicking a link
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
         });
     });
 
-    // 2. Typing Effect
-    const typingText = document.querySelector(".typing-text");
-    const roles = ["Full-Stack Developer", "Cybersecurity Enthusiast", "UI/UX Designer", "AI Engineer"];
+    // 3. Typing Effect
+    const typingText = document.querySelector('.typing-text');
+    const roles = ["Full Stack Developer", "AI/ML Enthusiast", "Engineer","Passionate Learner","Motivated Student"];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typeSpeed = 100;
 
     function type() {
         const currentRole = roles[roleIndex];
@@ -31,12 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isDeleting) {
             typingText.textContent = currentRole.substring(0, charIndex - 1);
             charIndex--;
-            typeSpeed = 50;
         } else {
             typingText.textContent = currentRole.substring(0, charIndex + 1);
             charIndex++;
-            typeSpeed = 100;
         }
+
+        let typeSpeed = isDeleting ? 50 : 100;
 
         if (!isDeleting && charIndex === currentRole.length) {
             isDeleting = true;
@@ -49,93 +52,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(type, typeSpeed);
     }
-    
-    // Start typing effect
+
     type();
 
-    // 3. Scroll Animations (Intersection Observer)
+    // 4. Scroll Animations (Intersection Observer)
     const observerOptions = {
-        threshold: 0.2
+        threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("show");
+                // Staggered animation delay
+                setTimeout(() => {
+                    entry.target.classList.add('show');
+                }, index * 150);
                 
-                // Specific animation for skill bars
-                if (entry.target.classList.contains("skill-category")) {
-                    const progressBars = entry.target.querySelectorAll(".progress");
+                // Animate Progress Bars if this is the skills section
+                if (entry.target.classList.contains('skill-category')) {
+                    const progressBars = entry.target.querySelectorAll('.progress');
                     progressBars.forEach(bar => {
-                        const width = bar.getAttribute("data-width");
+                        const width = bar.getAttribute('data-width');
                         bar.style.width = width;
                     });
                 }
-                
-                observer.unobserve(entry.target); // Animate once
             }
         });
     }, observerOptions);
 
-    const hiddenElements = document.querySelectorAll(".hidden");
+    const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach(el => observer.observe(el));
 
-    // 4. Active Navigation Link on Scroll
-    const sections = document.querySelectorAll("section");
-    
-    window.addEventListener("scroll", () => {
-        let current = "";
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                current = section.getAttribute("id");
-            }
-        });
+    // Handle Form Submission Message (Optional visual feedback)
+    const form = document.getElementById('contactForm');
+    // Formspree handles the actual submission redirect, 
+    // but you could add AJAX handling here if desired.
 
-        navLinksItems.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href").includes(current)) {
-                link.classList.add("active");
-            }
-        });
-    });
+    // 5. Theme Toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
 
-    // 5. Form Validation
-    const contactForm = document.getElementById("contactForm");
-    const formMessage = document.getElementById("formMessage");
-
-    contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        if (name === "" || email === "" || message === "") {
-            formMessage.style.color = "red";
-            formMessage.textContent = "Please fill in all fields.";
-            return;
-        }
-
-        if (!validateEmail(email)) {
-            formMessage.style.color = "red";
-            formMessage.textContent = "Please enter a valid email address.";
-            return;
-        }
-
-        // Simulate success (No backend)
-        formMessage.style.color = "#38bdf8";
-        formMessage.textContent = "Message sent successfully! (Demo mode)";
-        contactForm.reset();
-        
-        setTimeout(() => {
-            formMessage.textContent = "";
-        }, 3000);
-    });
-
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
+    // Check local storage
+    if (localStorage.getItem('theme') !== 'dark') {
+        body.classList.add('light-mode');
+        icon.classList.replace('fa-sun', 'fa-moon');
     }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        if (body.classList.contains('light-mode')) {
+            icon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'light');
+        } else {
+            icon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    // 6. Scroll Progress Bar
+    const scrollProgress = document.querySelector('.scroll-progress');
+    window.addEventListener('scroll', () => {
+        const totalHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = (window.scrollY / totalHeight) * 100;
+        scrollProgress.style.width = `${progress}%`;
+    });
 });
