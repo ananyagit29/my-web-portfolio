@@ -319,7 +319,7 @@ ul {
 /* About & Education */
 .grid-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
@@ -608,9 +608,18 @@ ul {
     .section-title {
         font-size: 2.2rem;
     }
+    .grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
 }
 
 @media (max-width: 768px) {
+    .grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
     .hamburger {
         display: block;
         z-index: 1001;
@@ -690,6 +699,11 @@ ul {
 }
 
 @media (max-width: 480px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
     .container {
         padding: 0 20px;
     }
