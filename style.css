@@ -461,8 +461,10 @@ ul {
 }
 
 .img-card img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 380px;
     height: auto;
+    margin: 0 auto;
     border-radius: 20px;
     animation: float 6s ease-in-out infinite;
     display: block;
