@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Typing Effect
+    // 3. Typing Effect with smooth transitions
     const typingText = document.querySelector('.typing-text');
     const roles = ["Full Stack Developer", "AI/ML Enthusiast", "Engineer","Passionate Learner","Motivated Student"];
     let roleIndex = 0;
@@ -39,15 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
             charIndex++;
         }
 
-        let typeSpeed = isDeleting ? 50 : 100;
+        let typeSpeed = isDeleting ? 40 : 80;
 
         if (!isDeleting && charIndex === currentRole.length) {
             isDeleting = true;
-            typeSpeed = 2000; // Pause at end
+            typeSpeed = 2500; // Pause at end
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             roleIndex = (roleIndex + 1) % roles.length;
-            typeSpeed = 500; // Pause before new word
+            typeSpeed = 600; // Pause before new word
         }
 
         setTimeout(type, typeSpeed);
@@ -55,25 +55,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     type();
 
-    // 4. Scroll Animations (Intersection Observer)
+    // 4. Scroll Animations (Intersection Observer) - Enhanced
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                // Staggered animation delay
+                // Staggered animation delay with easing
+                const delay = Math.min(index * 120, 500);
                 setTimeout(() => {
                     entry.target.classList.add('show');
-                }, index * 150);
+                    entry.target.style.transitionDelay = `${index * 0.1}s`;
+                }, delay);
                 
                 // Animate Progress Bars if this is the skills section
                 if (entry.target.classList.contains('skill-category')) {
                     const progressBars = entry.target.querySelectorAll('.progress');
-                    progressBars.forEach(bar => {
+                    progressBars.forEach((bar, barIndex) => {
                         const width = bar.getAttribute('data-width');
-                        bar.style.width = width;
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, barIndex * 150);
                     });
                 }
             }
@@ -82,11 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach(el => observer.observe(el));
-
-    // Handle Form Submission Message (Optional visual feedback)
-    const form = document.getElementById('contactForm');
-    // Formspree handles the actual submission redirect, 
-    // but you could add AJAX handling here if desired.
 
     // 5. Theme Toggle
     const themeToggle = document.querySelector('.theme-toggle');
@@ -116,5 +116,52 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalHeight = document.body.scrollHeight - window.innerHeight;
         const progress = (window.scrollY / totalHeight) * 100;
         scrollProgress.style.width = `${progress}%`;
+    }, { passive: true });
+
+    // 7. Smooth Scroll Behavior Enhancement
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
+
+    // 8. Add ripple effect on button clicks
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            if (e.button === 0) { // Left click only
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                // Add ripple animation if style exists
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            }
+        });
+    });
+
+    // 9. Navbar transparency change on scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.2)';
+        } else {
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        }
+    }, { passive: true });
 });
